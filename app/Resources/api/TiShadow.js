@@ -188,11 +188,7 @@ exports.launchApp = function(name) {
 };
 
 exports.clearCache = function(no_restart) {
-  Ti.App.Properties.listProperties().forEach(function(property) {
-    if (!property.match("^tishadow:") || property === "tishadow::locale") {
-      Ti.App.Properties.removeProperty(property);
-    }
-  });
+ Ti.App.Properties.removeProperty("tishadow::locale");
 
   var dirty_directories = [Ti.Filesystem.applicationDataDirectory];
   if (Ti.UI.iOS) {
