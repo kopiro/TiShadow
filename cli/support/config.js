@@ -103,6 +103,7 @@ config.buildPaths = function(env, callback) {
     config.jshint_path       = fs.existsSync(config.alloy_path) ? config.alloy_path : config.resources_path;
     config.isAlloy = fs.existsSync(config.alloy_path);
     config.isAlloy1_8_later = config.isAlloy && spawnSync("alloy",["-v"]).stdout >= "1.8.0";
+
     if (!config.platform && config.isAlloy) {
       var deploymentTargets = [];
       result['deployment-targets'][0].target.forEach(function(t) {

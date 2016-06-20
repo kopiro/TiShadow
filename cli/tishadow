@@ -225,8 +225,8 @@ if (config.isWatching) {
   config.buildPaths({},function() {
     var paths = [config.isAlloy ? "app" :"Resources", "spec"];
     if(!config.isAlloy1_8_later){
-      paths.push('i18n');
-    }
+     paths.push('i18n');
+   }
     paths = paths.map(function(p) {
       return path.join(p,"**/*");
     });
